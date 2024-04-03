@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Himanshu</title>
+
+    <!-- Custom CSS Linker-->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon Icon -->
+    <link rel="icon" href="H.ico">
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#about" class="">About</a>
+            <a href="#portfolio" class="">Projects</a>
+            <a href="#contact" class="">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <img id="home-skills-left" class="home-skills" src="images/left-skills.png">
+        <div id="profile">
+            <section id="profile-image-section">
+                <img id="profile-image" src="images/profile.png" alt="Himanshu">
+            </section>
+            <section id="profile-text-section">
+                <p id="profile-text-p1">Hello, I'm</p>
+                <h1 id="profile-title">Himanshu</h1>
+                <p id="profile-text-p2">Web Developer & Graphics Designer</p>
+            </section>
+        </div>
+        <img id="home-skills-right" class="home-skills" src="images/right-skills.png">
+        <img id="home-curve" class="home-assets" src="images/home-curve.png" width="100%">
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <p class="section-heading">Get To Know More<span class="section-title"> About Me!</span></p>
+        <div class="about-container">
+            <img class="about-image" src="images/About.jpg">
+            <div class="about-details">
+                <div class="about-cards-container">
+                    <div class="about-cards">
+                        <img src="images/experience.png">
+                        <h3>Experience</h3>
+                        <p class="about-cards-p">&lt 1 year</p>
+                        <p class="about-cards-p">Frontend Devlopment & Design</p>
+                        <p class="about-cards-p-m">&lt 1 year</p>
+                        <p class="about-cards-p-m">Web Dev</p>
+                    </div>
+                    <div class="about-cards">
+                        <img src="images/education.png">
+                        <h3>Education</h3>
+                        <p class="about-cards-p">B.Tech Computer Science</p>
+                        <p class="about-cards-p">Bihar Engineering University Patna</p>
+                        <p class="about-cards-p-m">B.Tech CSE</p>
+                        <p class="about-cards-p-m">BEU Patna</p>
+                    </div>
+                </div>
+                <p class="about-p">Hello, I am Himanshu Kumar, final-year student of Bachelor's in Computer Science and Engineering, with a strong passion for web development, graphic design, and problem-solving. Eager to leverage technical expertise and creative flair to contribute to innovative projects and make a positive impact in the field.</p>
+                <div class="skills">
+                    <p class="skills-title">Skills : </p>
+                    <div class="skills-icons-container">
+                        <img class="skills-icons" src="images/html.png" alt="">
+                        <img class="skills-icons" src="images/css-3.png" alt="">
+                        <img class="skills-icons" src="images/bootstrap.png" alt="">
+                        <img class="skills-icons" src="images/js.png" alt="">
+                        <img class="skills-icons" src="images/node.png" alt="">
+                        <img class="skills-icons" src="images/express.png" alt="">
+                        <img class="skills-icons" src="images/git.png" alt="">
+                        <img class="skills-icons" src="images/c++.png" alt="">
+                        <img class="skills-icons" src="images/photoshop.png" alt="">
+                        <img class="skills-icons" src="images/illustrator.png" alt="">
+                    </div>
+                </div>
+                
+                <button class="cv-download-button" onclick="window.open('Himanshu.pdf')">
+                    View CV
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <p class="section-heading"><span class="section-title">Portfolio</span></p>
+        
+        <div class="wrapper portfolio-container">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+              <li class="card">
+                <div class="img"><img src="images/gluonelectrical.jpg" draggable="false"></div>
+                <div class="description">
+                    <span class="project-title">Gluonelectrical</span>
+                    <br>
+                    <span class="project-description">Designed assets of an Ecommerce website</span>
+                </div>
+                <div class="button-container">
+                    <a class="project-button" href="https://www.gluonelectrical.com/">Live</a>
+                    <a class="project-button" href="https://drive.google.com/drive/folders/10W11gCRyRWimnYQUOMslOFouZxlPkvBn?usp=sharing">Assets</a>   
+                </div>
+              </li>
+              <li class="card">
+                <div class="img"><img src="images/hobbycue.jpg" draggable="false"></div>
+                <div class="description">
+                    <span class="project-title">Hobbycue</span>
+                    <br>
+                    <span class="project-description">Developed fully responsive frontend of hobbycue</span>
+                </div>
+                <div class="button-container">
+                    <a class="project-button" href="https://hksngu.github.io/hobbycue/index.html">Live</a>
+                    <a class="project-button" href="https://github.com/HKSNGU/hobbycue">Code</a>   
+                </div>
+              </li>
+              <li class="card">
+                <div class="img"><img src="images/quiz-app.png" draggable="false"></div>
+                <div class="description">
+                    <span class="project-title">Quiz App</span>
+                    <br>
+                    <span class="project-description">Developed a simple quiz app using Html, CSS, Javascript</span>
+                </div>
+                <div class="button-container">
+                    <a class="project-button" href="https://hksngu.github.io/Quiz-App/">Live</a>
+                    <a class="project-button" href="https://github.com/HKSNGU/Quiz-App">Code</a>   
+                </div>
+              </li>
+              <li class="card">
+                <div class="img"><img src="images/qr-code.png" draggable="false"></div>
+                <div class="description">
+                    <span class="project-title">Qr-Code Generator</span>
+                    <br>
+                    <span class="project-description">Developed Qr-Code generator with Html, CSS & Javascript</span>
+                </div>
+                <div class="button-container">
+                    <a class="project-button" href="https://hksngu.github.io/QR-Code-Generator/">Live</a>
+                    <a class="project-button" href="https://github.com/HKSNGU/QR-Code-Generator">Code</a>   
+                </div>
+              </li>
+              <li class="card">
+                <div class="img"><img src="images/clock.png" draggable="false"></div>
+                <div class="description">
+                    <span class="project-title">Clock & Stopwatch</span>
+                    <br>
+                    <span class="project-description">Developed clock & stopwatch using Html, CSS & Javascript</span>
+                </div>
+                <div class="button-container">
+                    <a class="project-button" href="https://hksngu.github.io/Clock-Stopwatch/">Live</a>
+                    <a class="project-button" href="https://github.com/HKSNGU/Clock-Stopwatch">Code</a>   
+                </div>
+              </li>
+              <li class="card">
+                <div class="img"><img src="images/calculator.png" draggable="false"></div>
+                <div class="description">
+                    <span class="project-title">Calculator</span>
+                    <br>
+                    <span class="project-description">Developed Scientific Calculator using Html, CSS & Javascript</span>
+                </div>
+                <div class="button-container">
+                    <a class="project-button" href="https://hksngu.github.io/Calculator/">Live</a>
+                    <a class="project-button" href="https://github.com/HKSNGU/Calculator">Code</a>   
+                </div>
+              </li>
+            </ul>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <div id="contact" class="section">
+        <p class="section-heading"><span class="section-title">ContactMe</span></p>
+        <div class="contact-container">
+            <div class="contact-left">
+              <p style="color: #262626;"><i class="fa-solid fa-envelope" style="color: #262626;"></i> <span class="contact-p">hksngu@gmail.com</span></p>
+              <p style="color: #262626;"><i class="fa-solid fa-square-phone" style="color: #262626;"></i> <span class="contact-p">+91 8603149030</span></p>
+              <div class="social-iocns">
+                <a href="https://www.instagram.com/hksngu/"><i class="fa-brands fa-instagram" style="color: #FF407D;"></i></a>
+                <a href="https://www.linkedin.com/in/hksngu/"><i class="fa-brands fa-linkedin" style="color: #4f75ff;"></i></a>
+                <a href="https://github.com/HKSNGU"><i class="fa-brands fa-github" style="color: #798F99;"></i></a>
+              </div>
+            </div>
+            <div class="contact-right">
+              <form name="submit-to-google-sheet">
+                <input type="name" name="Name" placeholder="Your Name" required>
+                <input type="Email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="form-submit-button">Sumbit</button>
+              </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Move To Top Button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Footer Section -->
+    <div class="footer">&#169; Himanshu</div>
+
+    <!-- Custom Javascript Linker-->
+    <script src="script.js"></script>
+</body>
+</html>

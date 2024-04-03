@@ -1,0 +1,1895 @@
+/* Global */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Move To Top Button */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 200;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 221, 0);
+    color: #262626;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+#myBtn:hover {
+    background-color: rgb(255, 196, 0);
+}
+
+/* Header Section */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+}
+header .hamburger{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+header .hamburger .bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+header nav {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    transition: 0.3s;
+}
+header nav a {
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 99px;
+    transition: 0.3s;
+    color: white;
+}
+header nav a.active {
+    background: #4666BA;
+}
+header nav a:hover {
+    background: #4666BA;
+}
+header nav:hover > a:not(:hover) {
+    background: none;
+}
+
+/* Home Section*/
+#home {
+    height: 100dvh;
+    width: 100%;
+    background: linear-gradient(to top, #D2E2FB 30%, #86A8DB);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+#profile-image {
+    width: 100%;
+}
+#profile-text-section {
+    color: #4666BA;
+    text-align: center;
+}
+#home-curve {
+    position: absolute;
+    bottom: 0;
+    pointer-events: none;
+    width: 100%;
+}
+
+
+/* Common Code For Sections */
+.section {
+    display: flex;
+    height: 100dvh;
+    width: 100%;
+    color: #ffffff;
+    z-index: 100;
+    overflow: hidden;
+    text-align: center;
+    background-color: #4666BA;
+}
+.section-heading {
+    font-weight: 900;
+    color: #fff;
+}
+.section-title {
+    font-weight: 900;
+    color: #fff;
+}
+
+/* About Section */
+.about-container{
+    display: flex;
+}
+.about-image{
+    filter: drop-shadow(0 0 5px #fff);
+}
+.about-details{
+    display: flex;
+}
+.about-cards-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.about-cards{
+    background-color: #fff;
+    color: #4666BA;
+    filter: drop-shadow(0 0 5px #fff);
+}
+.about-p {
+    color: #fff;
+}
+.skills{
+    display: flex;
+    width: 100%;
+}
+.skills-title{
+    position: relative;
+}
+.skills-icons-container{
+    display: flex;
+}
+.skills-icons{
+    filter: drop-shadow(0 0 2.5px #fff);
+}
+.cv-download-button{
+    border: none;
+    border-radius: 100px;
+    text-align: center;
+    background-color: #fff;
+    color: #4666BA;
+    font-weight: 600;
+}
+.cv-download-button:hover{
+    box-shadow: 0 0 6px #fff;
+    cursor: pointer;
+}
+
+/* Poertfolio Section */
+.wrapper {
+  position: relative;
+}
+.wrapper i {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  line-height: 50px;
+  background: #bfd5f900;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 2px #fff);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  flex-direction: column;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  flex-direction: column;
+  border-radius: 16px;
+}
+.carousel .card .img {
+  width: 100%;
+  display: absolute;
+  top: 0px;
+}
+.card .img img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+.carousel .card .description {
+    width: 100%;
+    padding: 20px 20px 0 20px;
+    text-align: left;
+}
+.carousel .card .description .project-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000;
+}
+.carousel .card .description .project-description {
+  font-size: 1rem;
+  color: #818FB4;
+}
+.carousel .card .button-container {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.carousel .card .button-container .project-button {
+  width: 45%;
+  height: 30px;
+  font-size: 1rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  font-weight: 500;
+  background-color: #000;
+  color: #fff;
+}
+.carousel .card .button-container .project-button:hover{
+    cursor: pointer;
+    filter: drop-shadow(0 0 4px #000);
+}
+
+
+/* Contact Section */
+#contact{
+    text-align: left;
+}
+.contact-container{
+    display: flex;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0 0 5px #fff;
+    overflow: hidden;
+}
+.social-iocns a{
+    text-decoration: none;
+    margin-right: 15px;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-iocns a:hover{
+    transform: translateY(-5px);
+}
+form input, form textarea{
+    border: 0;
+    outline: none;
+    background: #fff;
+    color: #262626;
+    border-radius: 16px; 
+    box-shadow: 0 0 5px #dadada;
+}
+.form-submit-button{
+    border: none;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    background-color: #74E291;
+    color: #fff;
+}
+.form-submit-button:hover{
+    cursor: pointer;
+    filter: drop-shadow(0 0 4px #74E291);
+}
+
+/* Footer Section */
+.footer{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #0E21A0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    box-shadow: 0 0 5px #0E21A0;
+}
+
+/* for extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 380px) and (orientation: portrait) {
+    #myBtn {
+        width: 35px;
+        height: 35px;
+        padding: 0px;
+        font-size: 14px;
+        bottom: 15px;
+        right: 10px;
+    }
+
+    /* header section */
+    header .hamburger{
+        display: block;
+    }
+    header nav {
+        background-color: #4666BA;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        top: -400px;
+    }
+    header nav.active {
+        top: 0px;
+    }
+    header nav a {
+        padding: 0;
+        font-size: 16px;
+    }
+
+    /* home section */
+    .home-skills{
+        display: none;
+    }
+    #profile{
+        flex-direction: column;
+        gap: 20px;
+        width: 80%;
+    }
+    #profile-image-section{
+        width: 70%;
+    }
+    #profile-text-section{
+        width: 100%;
+    }
+    #profile-text-section p {
+        font-size: 18px;
+    }
+    #profile-title{
+        font-size: 32px;
+    }
+
+    /* common section */
+    .section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-heading {
+        font-size: 16px;
+    }
+    .section-title {
+        font-size: 25px;
+    }
+
+    /* about section */
+    #about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .about-container{
+        justify-content: center;
+        width: 90%;
+        gap: 2rem;
+    }
+    .about-image{
+        display: none;
+    }
+    .about-details{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+    }
+    .about-cards-container{
+        justify-content: center;
+        gap: 1rem;
+    }
+    .about-cards{
+        width: 49%;
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+    .about-cards img{
+        width: 24px;
+        height: 24px;
+    }
+    .about-cards h3{
+        font-size: 16px;
+    }
+    .about-cards-p{
+        display: none;
+    }
+    .about-cards-p-m{
+        display: block;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    .about-p{
+        text-align: center;
+        line-height: 1.4;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .skills{
+        gap: 1rem;
+        flex-direction: column;
+    }
+    .skills-title{
+        top: 0px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .skills-icons-container{
+        display: flex;
+        justify-content: center;
+        gap: 1.6rem;
+        flex-wrap: wrap;
+    }
+    .skills-icons{
+        width: 8vw;
+        height: 8vw;
+    }
+    .cv-download-button{
+        width: 100%;
+        padding: 6px;
+        font-size: 16px;
+    }
+
+    /* Portfolio Section */
+    #portfolio .section-heading{
+        margin-bottom: 50px;
+    }
+    .wrapper {
+        width: 230px;
+    }
+    .wrapper i:first-child{
+        display: none;
+    }
+    .wrapper i:last-child{
+        display: none;
+    }
+    .wrapper .carousel {
+        grid-auto-columns: calc((100%) - 2vw);
+        gap: 3vw;
+    }
+    .carousel .card {
+        height: 320px;
+    }
+    .carousel .card .img {
+        height: 160px;
+    }
+    .carousel .card .description {
+        height: 160px;
+    }
+    .carousel .card .description .project-title {
+        font-size: 1.1rem;
+    }
+    .carousel .card .description .project-description {
+        font-size: .85rem;
+    }
+    .carousel .card .button-container {
+        padding: 5px;
+    }
+    .carousel .card .button-container .project-button {
+        font-size: .9rem;
+        width: 45%;
+        height: 30px;
+    }
+
+    /* Contact Section */
+    .contact-container{
+        text-align: center;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        width: 250px;
+        padding: 20px;
+        gap: 30px;
+    }
+    #contact .section-heading{
+        margin-bottom: 30px;
+    }
+    .contact-left{
+        width: 100%;
+        gap: 20px;
+    }
+    .contact-right{
+        width: 100%;
+    }
+    .contact-left i{
+        margin-right: 5px;
+        font-size: 22px;
+    }
+    .social-iocns{
+        margin-top: 10px;
+    }
+    .contact-left p{
+        margin-top: 10px;
+    }
+    .contact-p{
+        font-size: 14px;
+        position: relative;
+        bottom: 2.5px;
+    }
+    form input, form textarea{
+        width: 100%;
+        padding: 8px 15px;
+        margin: 10px 0;
+        font-size: 14px;
+    }
+    .form-submit-button{
+        padding: 7px;
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+/* for extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 380px) and (orientation: portrait) {
+    #myBtn {
+        width: 45px;
+        height: 45px;
+        padding: 0px;
+        font-size: 18px;
+        bottom: 15px;
+        right: 10px;
+    }
+
+    /* header section */
+    header .hamburger{
+        display: block;
+    }
+    header nav {
+        background-color: #4666BA;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        top: -400px;
+    }
+    header nav.active {
+        top: 0px;
+    }
+    header nav a {
+        padding: 0;
+        font-size: 16px;
+    }
+
+    /* home section */
+    .home-skills{
+        display: none;
+    }
+    #profile{
+        flex-direction: column;
+        gap: 20px;
+        width: 80%;
+    }
+    #profile-image-section{
+        width: 70%;
+    }
+    #profile-text-section{
+        width: 100%;
+    }
+    #profile-text-section p {
+        font-size: 18px;
+    }
+    #profile-title{
+        font-size: 32px;
+    }
+
+    /* common section */
+    .section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-heading {
+        font-size: 24px;
+    }
+    .section-title {
+        font-size: 30px;
+    }
+
+    /* about section */
+    #about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+    .about-container{
+        justify-content: center;
+        width: 90%;
+        gap: 2rem;
+    }
+    .about-image{
+        display: none;
+    }
+    .about-details{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 3rem;
+    }
+    .about-cards-container{
+        justify-content: center;
+        gap: 1rem;
+    }
+    .about-cards{
+        width: 49%;
+        border-radius: 20px;
+        padding: 15px;
+        text-align: center;
+    }
+    .about-cards img{
+        width: 30px;
+        height: 30px;
+    }
+    .about-cards h3{
+        font-size: 20px;
+    }
+    .about-cards-p{
+        display: none;
+    }
+    .about-cards-p-m{
+        display: block;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    .about-p{
+        text-align: center;
+        line-height: 1.4;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    .skills{
+        gap: 1rem;
+        flex-direction: column;
+    }
+    .skills-title{
+        top: 0px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .skills-icons-container{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    .skills-icons{
+        width: 9vw;
+        height: 9vw;
+    }
+    .cv-download-button{
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    /* Portfolio Section */
+    #portfolio .section-heading{
+        margin-bottom: 50px;
+    }
+    .wrapper {
+        width: 300px;
+    }
+    .wrapper i:first-child{
+        display: none;
+    }
+    .wrapper i:last-child{
+        display: none;
+    }
+    .wrapper .carousel {
+        grid-auto-columns: calc((100%) - 2vw);
+        gap: 3vw;
+    }
+    .carousel .card {
+        height: 400px;
+    }
+    .carousel .card .img {
+        height: 200px;
+    }
+    .carousel .card .description {
+        height: 200px;
+    }
+    .carousel .card .description .project-title {
+        font-size: 1.4rem;
+    }
+    .carousel .card .description .project-description {
+        font-size: 1.2rem;
+    }
+    .carousel .card .button-container {
+        padding: 5px;
+    }
+    .carousel .card .button-container .project-button {
+        font-size: 1.2rem;
+        width: 45%;
+        height: 35px;
+    }
+
+    /* Contact Section */
+    .contact-container{
+        text-align: center;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        width: 350px;
+        padding: 20px 50px;
+        gap: 30px;
+    }
+    #contact .section-heading{
+        margin-bottom: 50px;
+    }
+    .contact-left{
+        width: 100%;
+        gap: 30px;
+    }
+    .contact-right{
+        width: 100%;
+    }
+    .contact-left i{
+        margin-right: 5px;
+        font-size: 24px;
+    }
+    .social-iocns{
+        margin-top: 12px;
+    }
+    .contact-left p{
+        margin-top: 16px;
+    }
+    .contact-p{
+        font-size: 16px;
+        position: relative;
+        bottom: 2.5px;
+    }
+    form input, form textarea{
+        width: 100%;
+        padding: 8px 15px;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+    .form-submit-button{
+        padding: 7px;
+        width: 100%;
+        font-size: 18px;
+    }
+}
+
+/* for small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (orientation: portrait) {
+    #myBtn {
+        width: 70px;
+        height: 70px;
+        padding: 0px;
+        font-size: 26px;
+    }
+
+    /* header section */
+    header .hamburger{
+        display: block;
+        top: 20px;
+        right: 20px;
+    }
+    header .hamburger .bar{
+        width: 35px;
+        height: 5px;
+        margin: 6px auto;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(10.5px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-10.5px) rotate(-45deg);
+    }
+    header nav {
+        background-color: #4666BA;
+        width: 100%;
+        padding: 30px;
+        flex-direction: column;
+        align-items: center;
+        top: -400px;
+        gap: 10px;
+    }
+    header nav.active {
+        top: 0px;
+    }
+    header nav a {
+        padding: 0;
+        font-size: 26px;
+    }
+
+    /* home section */
+    .home-skills{
+        display: none;
+    }
+    #profile{
+        flex-direction: column;
+        gap: 24px;
+        width: 80%;
+    }
+    #profile-image-section{
+        width: 40%;
+    }
+    #profile-text-section{
+        width: 100%;
+    }
+    #profile-text-section p {
+        font-size: 24px;
+    }
+    #profile-title{
+        font-size: 48px;
+    }
+
+    /* common section */
+    .section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-heading {
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    .section-title {
+        font-size: 45px;
+    }
+
+    /* about section */
+    #about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .about-container{
+        justify-content: center;
+        width: 90%;
+        gap: 2rem;
+    }
+    .about-image{
+        display: none;
+    }
+    .about-details{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 4rem;
+    }
+    .about-cards-container{
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .about-cards{
+        width: 48%;
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+    .about-cards h3{
+        font-size: 28px;
+    }
+    .about-cards-p{
+        display: none;
+    }
+    .about-cards-p-m{
+        display: block;
+        font-size: 24px;
+        line-height: 1.4;
+    }
+    .about-p{
+        text-align: center;
+        line-height: 1.6;
+        font-weight: 600;
+        font-size: 22px;
+    }
+    .skills{
+        gap: 1rem;
+        flex-direction: column;
+    }
+    .skills-title{
+        top: 0px;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .skills-icons-container{
+        display: flex;
+        justify-content: center;
+        gap: 1.3rem;
+        flex-wrap: wrap;
+    }
+    .skills-icons{
+        width: 5.5vw;
+        height: 5.5vw;
+    }
+    .cv-download-button{
+        width: 100%;
+        padding: 15px;
+        font-size: 22px;
+    }
+
+    /* Portfolio Section */
+    .wrapper {
+        width: 380px;
+    }
+    .wrapper i:first-child{
+        left: -100px;
+    }
+    .wrapper i:last-child{
+        right: -100px;
+    }
+    .wrapper .carousel {
+        grid-auto-columns: calc((100%) - 2vw);
+        gap: 3vw;
+    }
+    .carousel .card {
+        height: 450px;
+    }
+    .carousel .card .img {
+        height: 225px;
+    }
+    .carousel .card .description {
+        height: 225px;
+    }
+    .carousel .card .description .project-title {
+        font-size: 1.8rem;
+    }
+    .carousel .card .description .project-description {
+        font-size: 1.3rem;
+    }
+    .carousel .card .button-container {
+        padding: 5px;
+    }
+    .carousel .card .button-container .project-button {
+        font-size: 1.4rem;
+        width: 45%;
+        height: 40px;
+    }
+
+    /* Contact Section */
+    .contact-container{
+        text-align: center;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        width: 590px;
+        padding: 50px;
+        gap: 30px;
+    }
+    .contact-left{
+        width: 100%;
+        gap: 30px;
+    }
+    .contact-right{
+        width: 100%;
+    }
+    .contact-left i{
+        margin-right: 5px;
+        font-size: 25px;
+    }
+    .social-iocns{
+        margin-top: 12px;
+    }
+    .contact-left p{
+        margin-top: 20px;
+    }
+    .contact-p{
+        font-size: 20px;
+        position: relative;
+        bottom: 2.5px;
+    }
+    form input, form textarea{
+        width: 100%;
+        padding: 8px 15px;
+        margin: 10px 0;
+        font-size: 20px;
+    }
+    .form-submit-button{
+        padding: 8px 25px;
+        font-size: 20px;
+    }
+}
+
+/* for small devices (landscape phones, 600px and up) */
+@media only screen and (min-width: 600px) and (orientation: landscape) {
+    #myBtn {
+        width: 35px;
+        height: 35px;
+        padding: 0px;
+        font-size: 14px;
+    }
+
+    /* header section */
+    header .hamburger{
+        display: none;
+    }
+    header nav{
+        padding: 15px;
+        gap: 15px;
+    }
+    header nav a{
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    /* home section */
+    .home-skills{
+        height: 40%;
+    }
+    #profile{
+        gap: 1rem;
+        width: 60%;
+    }
+    #profile-image-section{
+        width: 30%;
+    }
+    #profile-text-section{
+        width: 60%;
+    }
+    #profile-text-section p {
+        font-size: 12px;
+        font-weight: 600;
+    }
+    #profile-title{
+        font-size: 20px;
+    }
+
+    /* Common Code For Sections */
+    .section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-heading {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .section-title {
+        font-size: 22px;
+    }
+
+    /* About Section */
+    .about-container{
+        justify-content: center;
+        gap: 1rem;
+    }
+    .about-image{
+        height: 35vw;
+        border-radius: 10px;
+    }
+    .about-details{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .about-cards-container{
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    .about-cards{
+        width: 48%;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+    }
+    .about-cards img{
+        width: 20px;
+    }
+    .about-cards h3{
+        font-size: 12px;
+    }
+    .about-cards-p{
+        line-height: 1.2;
+        font-size: 9px;
+        display: block;
+    }
+    .about-cards-p-m{
+        display: none;
+    }
+    .about-p {
+        line-height: 1.2;
+        font-size: 10px;
+        font-weight: 500;
+        text-align: left;
+    }
+    .skills{
+        gap: 1rem;
+    }
+    .skills-title{
+        font-size: .8rem;
+        font-weight: 600;
+        top: -3px;
+    }
+    .skills-icons-container{
+        gap: 1rem;
+    }
+    .skills-icons{
+        width: 2.6vw;
+        height: 2.6vw;
+    }
+    .cv-download-button{
+        width: 100px;
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    /* Portfolio Section */
+    .wrapper {
+        width: 60%;
+    }
+    .wrapper i:first-child{
+        left: -100px;
+    }
+    .wrapper i:last-child{
+        right: -100px;
+    }
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 2vw);
+        gap: 3vw;
+    }
+    .carousel .card {
+        height: 280px;
+    }
+    .carousel .card .img {
+        height: 140px;
+    }
+    .carousel .card .description {
+        height: 140px;
+    }
+    .carousel .card .description .project-title {
+        font-size: .9rem;
+    }
+    .carousel .card .description .project-description {
+        font-size: .65rem;
+    }
+    .carousel .card .button-container {
+        padding: 5px;
+    }
+    .carousel .card .button-container .project-button {
+        font-size: .9rem;
+    }
+
+    /* Contact Section */
+    .contact-container{
+        align-items: start;
+        justify-content: center;
+        width: 500px;
+        padding: 20px;
+        gap: 5%;
+    }
+    .contact-left{
+        flex-basis: 35%;
+    }
+    .contact-right{
+        flex-basis: 60%;
+    }
+    .contact-left i{
+        margin-right: 5px;
+        font-size: 16px;
+    }
+    .social-iocns{
+        margin-top: 12px;
+    }
+    .contact-left p{
+        margin-top: 12px;
+    }
+    .contact-p{
+        font-size: 12px;
+        position: relative;
+        bottom: 2.5px;
+    }
+    form input, form textarea{
+        width: 100%;
+        padding: 6px 12px;
+        margin: 5px 0;
+        font-size: 12px;
+    }
+    .form-submit-button{
+        padding: 6px 19px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+    /* Move To Top Button */
+    #myBtn {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    /* header section */
+    header .hamburger{
+        display: none;
+    }
+    header nav{
+        padding: 15px;
+        gap: 15px;
+    }
+    header nav a{
+        font-size: 16px;
+        padding: 4px 8px;
+    }
+
+    /* home section */
+    .home-skills{
+        height: 40%;
+    }
+    #profile{
+        gap: 1rem;
+        width: 60%;
+    }
+    #profile-image-section{
+        width: 30%;
+    }
+    #profile-text-section{
+        width: 60%;
+    }
+    #profile-text-section p {
+        font-size: 12px;
+        font-weight: 600;
+    }
+    #profile-title{
+        font-size: 20px;
+    }
+
+    /* Common Code For Sections */
+    .section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-heading {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .section-title {
+        font-size: 22px;
+    }
+
+    /* About Section */
+    .about-container{
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .about-image{
+        height: 32vw;
+        border-radius: 10px;
+    }
+    .about-details{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .about-cards-container{
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    .about-cards{
+        width: 48%;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+    }
+    .about-cards img{
+        width: 20px;
+    }
+    .about-cards h3{
+        font-size: 12px;
+    }
+    .about-cards-p{
+        line-height: 1.2;
+        font-size: 10px;
+        display: block;
+    }
+    .about-cards-p-m{
+        display: none;
+    }
+    .about-p {
+        line-height: 1.4;
+        font-size: 12px;
+        font-weight: 500;
+        text-align: left;
+    }
+    .skills{
+        gap: 1rem;
+    }
+    .skills-title{
+        font-size: 1rem;
+        font-weight: 600;
+        top: 0px;
+    }
+    .skills-icons-container{
+        gap: 1.2rem;
+    }
+    .skills-icons{
+        width: 3vw;
+        height: 3vw;
+    }
+    .cv-download-button{
+        width: 100px;
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+
+    /* Portfolio Section */
+    .wrapper {
+        width: 60%;
+    }
+    .wrapper i:first-child{
+        left: -100px;
+    }
+    .wrapper i:last-child{
+        right: -100px;
+    }
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 2vw);
+        gap: 3vw;
+    }
+    .carousel .card {
+        height: 280px;
+    }
+    .carousel .card .img {
+        height: 140px;
+    }
+    .carousel .card .description {
+        height: 140px;
+    }
+    .carousel .card .description .project-title {
+        font-size: 1rem;
+    }
+    .carousel .card .description .project-description {
+        font-size: .7rem;
+    }
+    .carousel .card .button-container {
+        padding: 5px;
+    }
+    .carousel .card .button-container .project-button {
+        font-size: .9rem;
+    }
+
+    /* Contact Section */
+    .contact-container{
+        align-items: start;
+        justify-content: center;
+        width: 600px;
+        padding: 30px;
+        gap: 5%;
+    }
+    .contact-left{
+        flex-basis: 35%;
+    }
+    .contact-right{
+        flex-basis: 60%;
+    }
+    .contact-left i{
+        margin-right: 5px;
+        font-size: 20px;
+    }
+    .social-iocns{
+        margin-top: 15px;
+    }
+    .contact-left p{
+        margin-top: 15px;
+    }
+    .contact-p{
+        font-size: 12px;
+        position: relative;
+        bottom: 2.5px;
+    }
+    form input, form textarea{
+        width: 100%;
+        padding: 6px 12px;
+        margin: 5px 0;
+        font-size: 12px;
+    }
+    .form-submit-button{
+        width: 100px;
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+}
+
+/* for large devices (landscape tablets/laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (orientation: landscape) {
+    /* Move To Top Button */
+    #myBtn {
+        width: 50px;
+        height: 50px;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    /* header section */
+    header .hamburger{
+        display: none;
+    }
+    header nav{
+        padding: 20px;
+        gap: 20px;
+    }
+    header nav a{
+        font-size: 20px;
+        padding: 8px 16px;
+    }
+
+    /* home section */
+    .home-skills{
+        height: 30%;
+    }
+    #profile{
+        gap: 3rem;
+        width: 55%;
+    }
+    #profile-image-section{
+        width: 40%;
+    }
+    #profile-text-section{
+        width: 59%;
+    }
+    #profile-text-section p {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    #profile-title{
+        font-size: 35px;
+    }
+    #profile-text-p2 {
+        margin-bottom: 16px;
+    }
+
+    /* Common Code For Sections */
+    .section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-heading {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+    .section-title {
+        font-size: 30px;
+    }
+
+    /* About Section */
+    .about-container{
+        justify-content: center;
+        gap: 2rem;
+    }
+    .about-image{
+        height: 35vw;
+        border-radius: 20px;
+    }
+    .about-details{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .about-cards-container{
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    .about-cards{
+        width: 48%;
+        border-radius: 20px;
+        padding: 15px;
+        text-align: center;
+    }
+    .about-cards h3{
+        font-size: 18px;
+    }
+    .about-cards-p{
+        line-height: 1.4;
+        font-size: 14px;
+        display: block;
+    }
+    .about-cards-p-m{
+        display: none;
+    }
+    .about-p {
+        line-height: 1.4;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left;
+    }
+    .skills{
+        gap: 1rem;
+    }
+    .skills-title{
+        font-size: 1.2rem;
+        font-weight: 600;
+        top: 0;
+    }
+    .skills-icons-container{
+        gap: 1.5rem;
+    }
+    .skills-icons{
+        width: 2.6vw;
+        height: 2.6vw;
+    }
+    .cv-download-button{
+        width: 150px;
+        padding: 7px 15px;
+        font-size: 20px;
+    }
+
+    /* Portfolio Section */
+    .wrapper {
+        width: 60%;
+    }
+    .wrapper i:first-child{
+        left: -100px;
+    }
+    .wrapper i:last-child{
+        right: -100px;
+    }
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 5vw);
+        gap: 7.5vw;
+    }
+    .carousel .card {
+        height: 350px;
+    }
+    .carousel .card .img {
+        height: 175px;
+    }
+    .carousel .card .description {
+        height: 175px;
+    }
+    .carousel .card .description .project-title {
+        font-size: 1.1rem;
+    }
+    .carousel .card .description .project-description {
+        font-size: .85rem;
+    }
+
+    /* Contact Section */
+    .contact-container{
+        align-items: start;
+        justify-content: center;
+        width: 800px;
+        padding: 50px;
+        gap: 5%;
+    }
+    .contact-left{
+        flex-basis: 35%;
+    }
+    .contact-right{
+        flex-basis: 60%;
+    }
+    .contact-left i{
+        margin-right: 5px;
+        font-size: 28px;
+    }
+    .social-iocns{
+        margin-top: 25px;
+    }
+    .contact-left p{
+        margin-top: 25px;
+    }
+    form input, form textarea{
+        width: 100%;
+        padding: 12px;
+        margin: 12px 0;
+        font-size: 16px;
+    }
+    .form-submit-button{
+        width: 120px;
+        padding: 7px 12px;
+        font-size: 18px;
+    }
+}
+
+/* for extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) and (orientation: landscape) {
+    /* Move To Top Button */
+    #myBtn {
+        width: 50px;
+        height: 50px;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    /* header section */
+    header .hamburger{
+        display: none;
+    }
+    header nav{
+        padding: 20px;
+        gap: 20px;
+    }
+    header nav a{
+        font-size: 20px;
+        padding: 8px 16px;
+    }
+
+    /* home section */
+    .home-skills{
+        height: 40%;
+    }
+    #profile{
+        gap: 3rem;
+        width: 50%;
+    }
+    #profile-image-section{
+        width: 40%;
+    }
+    #profile-text-section{
+        width: 59%;
+    }
+    #profile-text-section p {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    #profile-title{
+        font-size: 48px;
+    }
+    #profile-text-p2 {
+        margin-bottom: 16px;
+    }
+
+    /* Common Code For Sections */
+    .section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-heading {
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+    .section-title {
+        font-size: 40px;
+    }
+
+    /* About Section */
+    .about-container{
+        justify-content: center;
+        gap: 3rem;
+    }
+    .about-image{
+        height: 35vw;
+        border-radius: 20px;
+    }
+    .about-details{
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .about-cards-container{
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    .about-cards{
+        width: 48%;
+        border-radius: 20px;
+        padding: 15px;
+        text-align: center;
+    }
+    .about-cards-p{
+        line-height: 1.8;
+        display: block;
+    }
+    .about-cards-p-m{
+        display: none;
+    }
+    .about-p {
+        line-height: 1.8;
+        font-weight: 600;
+        text-align: left;
+    }
+    .skills{
+        gap: 1rem;
+    }
+    .skills-title{
+        font-size: 1.2rem;
+        font-weight: 600;
+        top: 0;
+    }
+    .skills-icons-container{
+        gap: 2rem;
+    }
+    .skills-icons{
+        width: 2.4vw;
+        height: 2.4vw;
+    }
+    .cv-download-button{
+        width: 150px;
+        padding: 7px 15px;
+        font-size: 20px;
+    }
+
+    /* Portfolio Section */
+    .wrapper {
+        width: 60%;
+    }
+    .wrapper i:first-child{
+        left: -100px;
+    }
+    .wrapper i:last-child{
+        right: -100px;
+    }
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 3) - 2vw);
+        gap: 3vw;
+    }
+    .carousel .card {
+        height: 350px;
+    }
+    .carousel .card .img {
+        height: 175px;
+    }
+    .carousel .card .description {
+        height: 175px;
+    }
+    .carousel .card .description .project-title {
+        font-size: 1.1rem;
+    }
+    .carousel .card .description .project-description {
+        font-size: .85rem;
+    }
+
+    /* Contact Section */
+    .contact-container{
+        align-items: start;
+        justify-content: center;
+        width: 900px;
+        padding: 60px;
+        gap: 5%;
+    }
+    .contact-left{
+        flex-basis: 35%;
+    }
+    .contact-right{
+        flex-basis: 60%;
+    }
+    .contact-left i{
+        margin-right: 5px;
+        font-size: 28px;
+    }
+    .social-iocns{
+        margin-top: 25px;
+    }
+    .contact-left p{
+        margin-top: 25px;
+    }
+    form input, form textarea{
+        width: 100%;
+        padding: 12px;
+        margin: 12px 0;
+        font-size: 16px;
+    }
+    .form-submit-button{
+        width: 120px;
+        padding: 7px 12px;
+        font-size: 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Portfolio Section */
+/* @media screen and (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+    #home-skills-left{
+        display: none;
+    }
+    #home-skills-right{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+    }
+    header nav {
+        gap: 5px;
+    }
+    header nav a {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+@media screen and (max-width: 300px) {
+    header nav a {
+        font-size: 12px;
+    }
+} */
