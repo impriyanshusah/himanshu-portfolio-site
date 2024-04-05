@@ -36,14 +36,14 @@ header {
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 100;
+    z-index: 50;
 }
 header .hamburger{
     position: absolute;
     top: 20px;
     right: 20px;
     cursor: pointer;
-    z-index: 100;
+    z-index: 50;
 }
 header .hamburger .bar{
     display: block;
@@ -421,7 +421,8 @@ form input, form textarea{
     }
     .about-container{
         justify-content: center;
-        width: 90%;
+        width: 100%;
+        padding: 60px;
         gap: 2rem;
     }
     .about-image{
@@ -1823,73 +1824,3 @@ form input, form textarea{
         font-size: 18px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Portfolio Section */
-/* @media screen and (max-width: 900px) {
-    .wrapper .carousel {
-        grid-auto-columns: calc((100% / 2) - 9px);
-    }
-    #home-skills-left{
-        display: none;
-    }
-    #home-skills-right{
-        display: none;
-    }
-}
-@media screen and (max-width: 600px) {
-    .wrapper .carousel {
-        grid-auto-columns: 100%;
-    }
-    header nav {
-        gap: 5px;
-    }
-    header nav a {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
-@media screen and (max-width: 300px) {
-    header nav a {
-        font-size: 12px;
-    }
-} */
