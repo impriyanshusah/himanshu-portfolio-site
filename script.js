@@ -82,7 +82,7 @@ const infiniteScroll = () => {
 const autoPlay = () => {
     if(window.innerWidth < 800 || !isAutoPlay) return;
     
-    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 1500);
 }
 autoPlay();
 carousel.addEventListener("mousedown", dragStart);

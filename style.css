@@ -19,15 +19,13 @@ html {
     z-index: 200;
     border: none;
     outline: none;
-    background-color: rgb(255, 221, 0);
-    color: #262626;
+    background-color: #45a29e;
+    color: #1f2833;
     cursor: pointer;
     border-radius: 100px;
 }
 
-#myBtn:hover {
-    background-color: rgb(255, 196, 0);
-}
+
 
 /* Header Section */
 header {
@@ -52,7 +50,7 @@ header .hamburger .bar{
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #fff;
+    background-color: #1f2833;
 }
 .hamburger.active .bar:nth-child(2) {
     opacity: 0;
@@ -74,13 +72,13 @@ header nav a {
     font-weight: 600;
     border-radius: 99px;
     transition: 0.3s;
-    color: white;
+    color: #ffffff;
 }
 header nav a.active {
-    background: #4666BA;
+    background: #45a29e;
 }
 header nav a:hover {
-    background: #4666BA;
+    background: #45a29e;
 }
 header nav:hover > a:not(:hover) {
     background: none;
@@ -90,7 +88,7 @@ header nav:hover > a:not(:hover) {
 #home {
     height: 100dvh;
     width: 100%;
-    background: linear-gradient(to top, #D2E2FB 30%, #86A8DB);
+    background: linear-gradient(to top, #1F2833 30%, #0B0C10);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -102,13 +100,13 @@ header nav:hover > a:not(:hover) {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #fff;
+    color: #1f2833;
 }
 #profile-image {
     width: 100%;
 }
 #profile-text-section {
-    color: #4666BA;
+    color: #66fcf1;
     text-align: center;
 }
 #home-curve {
@@ -128,15 +126,15 @@ header nav:hover > a:not(:hover) {
     z-index: 100;
     overflow: hidden;
     text-align: center;
-    background-color: #4666BA;
+    background-color: #66fcf1;
 }
 .section-heading {
     font-weight: 900;
-    color: #fff;
+    color: #1f2833;
 }
 .section-title {
     font-weight: 900;
-    color: #fff;
+    color: #1f2833;
 }
 
 /* About Section */
@@ -144,7 +142,7 @@ header nav:hover > a:not(:hover) {
     display: flex;
 }
 .about-image{
-    filter: drop-shadow(0 0 5px #fff);
+    filter: drop-shadow(0 0 5px #1f2833);
 }
 .about-details{
     display: flex;
@@ -155,12 +153,12 @@ header nav:hover > a:not(:hover) {
     gap: 3rem;
 }
 .about-cards{
-    background-color: #fff;
-    color: #4666BA;
-    filter: drop-shadow(0 0 5px #fff);
+    background-color: #1f2833;
+    color: #66fcf1;
+    filter: drop-shadow(0 0 5px #1f2833);
 }
 .about-p {
-    color: #fff;
+    color: #1f2833;
 }
 .skills{
     display: flex;
@@ -173,18 +171,18 @@ header nav:hover > a:not(:hover) {
     display: flex;
 }
 .skills-icons{
-    filter: drop-shadow(0 0 2.5px #fff);
+    filter: drop-shadow(0 0 2.5px #1f2833);
 }
 .cv-download-button{
     border: none;
     border-radius: 100px;
     text-align: center;
-    background-color: #fff;
-    color: #4666BA;
+    background-color: #1f2833;
+    color: #66fcf1;
     font-weight: 600;
 }
 .cv-download-button:hover{
-    box-shadow: 0 0 6px #fff;
+    box-shadow: 0 0 6px #1f2833;
     cursor: pointer;
 }
 
@@ -204,7 +202,7 @@ header nav:hover > a:not(:hover) {
   line-height: 50px;
   background: #bfd5f900;
   border-radius: 50%;
-  filter: drop-shadow(0 0 2px #fff);
+  filter: drop-shadow(0 0 2px #1f2833);
   transition: transform 0.1s linear;
 }
 .wrapper i:active{
@@ -239,7 +237,7 @@ header nav:hover > a:not(:hover) {
 .carousel .card {
   scroll-snap-align: start;
   list-style: none;
-  background: #fff;
+  background: #45a29e;
   cursor: pointer;
   flex-direction: column;
   border-radius: 16px;
@@ -262,11 +260,11 @@ header nav:hover > a:not(:hover) {
 .carousel .card .description .project-title {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #000;
+  color: #0b0c10;
 }
 .carousel .card .description .project-description {
   font-size: 1rem;
-  color: #818FB4;
+  color: #0b0c10;
 }
 .carousel .card .button-container {
     padding: 10px;
@@ -283,12 +281,12 @@ header nav:hover > a:not(:hover) {
   align-items: center;
   border-radius: 50px;
   font-weight: 500;
-  background-color: #000;
-  color: #fff;
+  background-color: #1f2833;
+  color: #c5c6c7;
 }
 .carousel .card .button-container .project-button:hover{
     cursor: pointer;
-    filter: drop-shadow(0 0 4px #000);
+    filter: drop-shadow(0 0 4px #1f2833);
 }
 
 
@@ -299,8 +297,8 @@ header nav:hover > a:not(:hover) {
 .contact-container{
     display: flex;
     border-radius: 16px;
-    background-color: #fff;
-    box-shadow: 0 0 5px #fff;
+    background-color: #1f2833;
+    box-shadow: 0 0 5px #1F2833;
     overflow: hidden;
 }
 .social-iocns a{
@@ -315,8 +313,8 @@ header nav:hover > a:not(:hover) {
 form input, form textarea{
     border: 0;
     outline: none;
-    background: #fff;
-    color: #262626;
+    background: #1f2833;
+    color: #c5c6c7;
     border-radius: 16px; 
     box-shadow: 0 0 5px #dadada;
 }
@@ -327,12 +325,12 @@ form input, form textarea{
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    background-color: #74E291;
-    color: #fff;
+    background-color: #66fcf1;
+    color: #1f2833;
 }
 .form-submit-button:hover{
     cursor: pointer;
-    filter: drop-shadow(0 0 4px #74E291);
+    filter: drop-shadow(0 0 4px #66fcf1);
 }
 
 /* Footer Section */
@@ -340,11 +338,11 @@ form input, form textarea{
     width: 100%;
     padding: 10px;
     text-align: center;
-    background-color: #0E21A0;
-    color: #fff;
+    background-color: #0b0c10;
+    color: #c5c6c7;
     font-size: 20px;
     font-weight: 600;
-    box-shadow: 0 0 5px #0E21A0;
+    box-shadow: 0 0 5px #0b0c10 ;
 }
 
 /* for extra small devices (phones, 600px and down) */
@@ -363,7 +361,7 @@ form input, form textarea{
         display: block;
     }
     header nav {
-        background-color: #4666BA;
+        background-color: #66fcf1;
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -595,7 +593,7 @@ form input, form textarea{
         display: block;
     }
     header nav {
-        background-color: #4666BA;
+        background-color: #66fcf1;
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -837,7 +835,7 @@ form input, form textarea{
         transform: translateY(-10.5px) rotate(-45deg);
     }
     header nav {
-        background-color: #4666BA;
+        background-color: #66fcf1;
         width: 100%;
         padding: 30px;
         flex-direction: column;
@@ -1153,6 +1151,7 @@ form input, form textarea{
         font-size: .8rem;
         font-weight: 600;
         top: -3px;
+        color: #1f2833;
     }
     .skills-icons-container{
         gap: 1rem;
