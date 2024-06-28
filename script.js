@@ -93,14 +93,39 @@ wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
 
 // Contact Section
-const scriptURL ='https://script.google.com/macros/s/AKfycbzUXzpScP4-gG1NtQ1myzevBwHCDkU3xnz1LqIXb0zUeUlH8vIHJrFDAwoDCdmNgvfK/exec'
-const form = document.forms['submit-to-google-sheet']
-form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => console.log('Success!', response))
-    .catch(error => console.error('Error!', error.message))
-})
+// Email JS
+const contactForm = document.getElementById("contact-form"),
+  contactMessage = document.getElementById("contact-message");
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  // serviceId - templateId - #form - publicKey
+  emailjs
+    .sendForm(
+      "service_spsah3h",
+      "template_4n5dg9t",
+      "#contact-form",
+      "ryZvDGXnMOZiYX1BR"
+    )
+    .then(
+      () => {
+        // show sent message
+        contactMessage.textContent = "Message Sent Succesfully ✅";
+
+        // remove message after 5sec
+        setTimeout(() => {
+          contactMessage.textContent = "";
+        }, 5000);
+
+        //clear input fields
+        contactForm.reset();
+      },
+      () => {
+        contactMessage.textContent = "Message Not Sent (service error) ❌";
+      }
+    );
+};
+contactForm.addEventListener("submit", sendEmail);
 
 // Move To Top Button
 let mybutton = document.getElementById("myBtn");
